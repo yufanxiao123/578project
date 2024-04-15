@@ -79,4 +79,7 @@ dependencies {
     implementation(libs.kotlinx.coroutines.android)
     implementation (libs.picasso)
     implementation (libs.play.services.location)
+    implementation (libs.play.services.maps)
+    implementation ("com.google.maps.android:android-maps-utils:1.0.2")
+    implementation ("com.google.android.gms:play-services-maps:17.0.0")
 }

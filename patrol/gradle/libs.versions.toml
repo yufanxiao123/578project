@@ -15,6 +15,7 @@ composeBom = "2023.08.00"
 material = "1.1.0"
 picasso = "2.71828"
 playServicesLocation = "18.0.0"
+playServicesMapsVersion = "17.0.0"
 recyclerview = "1.0.0"
 retrofit = "2.6.1"
 swiperefreshlayout = "1.0.0"
@@ -45,6 +46,7 @@ kotlinx-coroutines-core = { module = "org.jetbrains.kotlinx:kotlinx-coroutines-c
 material = { module = "com.google.android.material:material", version.ref = "material" }
 picasso = { module = "com.squareup.picasso:picasso", version.ref = "picasso" }
 play-services-location = { module = "com.google.android.gms:play-services-location", version.ref = "playServicesLocation" }
+play-services-maps-v1700 = { module = "com.google.android.gms:play-services-maps", version.ref = "playServicesMapsVersion" }
 retrofit = { module = "com.squareup.retrofit2:retrofit", version.ref = "retrofit" }
 play-services-maps = { group = "com.google.android.gms", name = "play-services-maps", version.ref = "playServicesMaps" }
 
