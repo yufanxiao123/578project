@@ -47,14 +47,14 @@ class MainActivity : ComponentActivity() {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults)
         if (requestCode == REQUEST_LOCATION_PERMISSION) {
             if (grantResults.isNotEmpty() && grantResults[0] == android.content.pm.PackageManager.PERMISSION_GRANTED) {
-                handlePermissionGranted()
+                handleLocationPermissionGranted()
             } else {
-                handlePermissionDenied()
+                handleLocationPermissionDenied()
             }
         }
     }
 
-    private fun handlePermissionGranted() {
+    private fun handleLocationPermissionGranted() {
         // Execute your code for using location here
         if (checkSelfPermission(android.Manifest.permission.ACCESS_FINE_LOCATION) == android.content.pm.PackageManager.PERMISSION_GRANTED) {
             fusedLocationClient.lastLocation
@@ -66,9 +66,8 @@ class MainActivity : ComponentActivity() {
         }
     }
 
-    private fun handlePermissionDenied() {
+    private fun handleLocationPermissionDenied() {
         Toast.makeText(this, "Permission denied", Toast.LENGTH_SHORT).show()
-        // You might disable features of your app that rely on this permission.
     }
 
     private fun getAddressFromLocation(latitude: Double, longitude: Double) {
@@ -78,8 +77,6 @@ class MainActivity : ComponentActivity() {
             if (addresses != null && addresses.isNotEmpty()) {
                 val address = addresses[0]
                 val addressFragments = arrayOf(address.featureName, address.thoroughfare, address.subLocality, address.locality, address.adminArea, address.countryName, address.postalCode)
-
-                // Join all parts and remove any null or empty strings, then display in EditText
                 val completeAddress = addressFragments.filterNotNull().joinToString(separator = ", ")
                 findViewById<EditText>(R.id.edit_place).setText(completeAddress)
             } else {
