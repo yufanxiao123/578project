@@ -2,6 +2,7 @@ package com.example.patrol
 
 import android.content.Intent
 import android.location.Geocoder
+import android.location.Location
 import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
@@ -10,6 +11,7 @@ import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import com.example.patrol.logic.model.News
+import com.example.patrol.view.crowd.CrowdActivity
 import com.example.patrol.view.news.NewsActivity
 import com.example.patrol.view.news.NewsAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
@@ -27,10 +29,21 @@ class MainActivity : ComponentActivity() {
         setContentView(R.layout.activity_main)
         fusedLocationClient = LocationServices.getFusedLocationProviderClient(this)
 
+        findViewById<Button>(R.id.button_location).setOnClickListener {
+            val intent = Intent(this, CrowdActivity::class.java)
+            val place = findViewById<EditText>(R.id.edit_place).text.toString()
+            val coordination = getCoordinationFromAddress(place)
+            intent.putExtra("place", place)
+            intent.putExtra("lat", coordination.latitude)
+            intent.putExtra("lon", coordination.longitude)
+            startActivity(intent)
+        }
+
         findViewById<Button>(R.id.button_news).setOnClickListener {
             val intent = Intent(this, NewsActivity::class.java)
             startActivity(intent)
         }
+
         findViewById<CheckBox>(R.id.box_get_location).setOnClickListener {
             val checked = findViewById<CheckBox>(R.id.box_get_location).isChecked
             if (checked) {
@@ -86,6 +99,28 @@ class MainActivity : ComponentActivity() {
             e.printStackTrace()
             Toast.makeText(this, "Unable geocode location", Toast.LENGTH_SHORT).show()
         }
+    }
+
+    private fun getCoordinationFromAddress(address: String): Location {
+        val geocoder = Geocoder(this, Locale.getDefault())
+        try {
+            val addresses = geocoder.getFromLocationName(address, 1)
+            if (addresses != null && addresses.isNotEmpty()) {
+                val location = addresses[0]
+                val latitude = location.latitude
+                val longitude = location.longitude
+                return Location("").apply {
+                    this.latitude = latitude
+                    this.longitude = longitude
+                }
+            } else {
+                Toast.makeText(this, "No location found", Toast.LENGTH_SHORT).show()
+            }
+        } catch (e: IOException) {
+            e.printStackTrace()
+            Toast.makeText(this, "Unable geocode location", Toast.LENGTH_SHORT).show()
+        }
+        return Location("")
     }
 
 }

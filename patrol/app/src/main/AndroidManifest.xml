@@ -16,6 +16,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Patrol"
         tools:targetApi="31">
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyCZjbP9McXIFzHFuhfA_MDtPvICDgKzfnM" />
         <activity
             android:name=".MainActivity"
             android:exported="true"
@@ -31,6 +34,11 @@
             android:name=".view.news.NewsActivity"
             android:exported="true"
             android:label="news"
+            android:theme="@style/Theme.Patrol" />
+        <activity
+            android:name=".view.crowd.CrowdActivity"
+            android:exported="true"
+            android:label="crowd"
             android:theme="@style/Theme.Patrol" />
     </application>
 
