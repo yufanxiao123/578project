@@ -71,6 +71,7 @@ dependencies {
     implementation(libs.androidx.recyclerview)
     implementation(libs.androidx.lifecycle.extensions)
     implementation(libs.androidx.lifecycle.livedata.ktx)
+//    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:2.2.0-alpha05")
     implementation(libs.material)
     implementation(libs.androidx.swiperefreshlayout)
     implementation(libs.retrofit)
@@ -82,4 +83,5 @@ dependencies {
     implementation (libs.play.services.maps)
     implementation ("com.google.maps.android:android-maps-utils:1.0.2")
     implementation ("com.google.android.gms:play-services-maps:17.0.0")
+
 }
