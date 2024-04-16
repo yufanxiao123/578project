@@ -7,13 +7,11 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.CheckBox
 import android.widget.EditText
-import android.widget.RadioButton
 import android.widget.Toast
 import androidx.activity.ComponentActivity
-import com.example.patrol.logic.model.News
+import com.example.patrol.view.charts.BarChartActivity
 import com.example.patrol.view.crowd.CrowdActivity
 import com.example.patrol.view.news.NewsActivity
-import com.example.patrol.view.news.NewsAdapter
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.io.IOException
@@ -41,6 +39,11 @@ class MainActivity : ComponentActivity() {
 
         findViewById<Button>(R.id.button_news).setOnClickListener {
             val intent = Intent(this, NewsActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.button_history).setOnClickListener{
+            val intent = Intent(this, BarChartActivity::class.java)
             startActivity(intent)
         }
 

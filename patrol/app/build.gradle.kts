@@ -83,5 +83,5 @@ dependencies {
     implementation (libs.play.services.maps)
     implementation ("com.google.maps.android:android-maps-utils:1.0.2")
     implementation ("com.google.android.gms:play-services-maps:17.0.0")
-
+    implementation ("com.github.PhilJay:MPAndroidChart:v3.1.0")
 }
