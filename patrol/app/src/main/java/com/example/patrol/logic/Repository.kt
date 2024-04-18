@@ -12,6 +12,11 @@ object Repository {
         Result.success(multiNews)
     }
 
+    fun getCrowd(lat: String, lon: String) = fire(Dispatchers.IO) {
+        val multiCrowds = PatrolNetwork.getCrowd(lat,lon)
+        Result.success(multiCrowds)
+    }
+
     private fun <T> fire(context: CoroutineContext, block: suspend () -> Result<T>) =
         liveData<Result<T>>(context) {
             val result = try {

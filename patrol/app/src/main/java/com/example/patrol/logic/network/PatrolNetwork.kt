@@ -12,6 +12,9 @@ object PatrolNetwork {
 
     suspend fun getNews() = newsService.getNews().await()
 
+    private val crowdService = ServiceCreator.create(CrowdService::class.java)
+    suspend fun getCrowd(lat: String, lon: String) = crowdService.getCrowd(lat,lon).await()
+
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
             enqueue(object : Callback<T> {
