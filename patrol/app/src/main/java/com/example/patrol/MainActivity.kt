@@ -121,7 +121,6 @@ class MainActivity : ComponentActivity() {
             }
         } catch (e: IOException) {
             e.printStackTrace()
-            Toast.makeText(this, "Unable geocode location", Toast.LENGTH_SHORT).show()
         }
         return Location("")
     }
