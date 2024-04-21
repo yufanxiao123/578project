@@ -12,6 +12,7 @@ import androidx.activity.ComponentActivity
 import com.example.patrol.view.charts.BarChartActivity
 import com.example.patrol.view.crowd.CrowdActivity
 import com.example.patrol.view.news.NewsActivity
+import com.example.patrol.view.predict.PredictActivity
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationServices
 import java.io.IOException
@@ -44,6 +45,16 @@ class MainActivity : ComponentActivity() {
 
         findViewById<Button>(R.id.button_history).setOnClickListener{
             val intent = Intent(this, BarChartActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.button_prediction).setOnClickListener{
+            val intent = Intent(this, PredictActivity::class.java)
+            val place = findViewById<EditText>(R.id.edit_place).text.toString()
+            val coordination = getCoordinationFromAddress(place)
+            intent.putExtra("place", place)
+            intent.putExtra("lat", coordination.latitude)
+            intent.putExtra("lon", coordination.longitude)
             startActivity(intent)
         }
 
