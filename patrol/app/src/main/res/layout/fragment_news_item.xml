@@ -10,6 +10,7 @@
         android:layout_width="150dp"
         android:layout_height="100dp"
         android:src="@drawable/ic_launcher_background"
+        android:scaleType="centerCrop"
         android:contentDescription="news_image" />
     <LinearLayout
         android:layout_width="wrap_content"
