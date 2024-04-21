@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="NONE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="878657d5-5d87-4359-b3e3-b1b60769d3a1" name="Changes" comment="" />
+    <list default="true" id="878657d5-5d87-4359-b3e3-b1b60769d3a1" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/model/Predictions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PredictService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/view/predict/MyMarkerView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/view/predict/PredictActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/drawable/gradient_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/drawable/oval_marker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/layout/activity_predict.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/layout/markertextview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PatrolNetwork.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PatrolNetwork.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/res/values/colors.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -13,16 +29,37 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$/patrol">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="ExternalProjectsManager">
+    <system id="GRADLE">
+      <state>
+        <task path="$PROJECT_DIR$/patrol/app">
+          <activation />
+        </task>
+        <projects_view>
+          <tree_state>
+            <expand />
+            <select />
+          </tree_state>
+        </projects_view>
+      </state>
+    </system>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 2
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
   <component name="ProjectId" id="2f6PyYmxjieZbFwDayjZ8McHxMf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -32,11 +69,16 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
     "cf.first.check.clang-format": "false",
     "cidr.known.project.marker": "true",
     "dart.analysis.tool.window.visible": "false",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/guangzhaocao/USC_S_3/CSCI578/project/578project",
+    "git-widget-placeholder": "mobile__prediction__guojiazhen",
+    "last_opened_file_path": "C:/MyDocuments/AndroidStudioProjects/578project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.kotlinCompiler",
     "show.migrate.to.gradle.popup": "false"
   }
 }]]></component>
