@@ -3,9 +3,9 @@ package com.example.patrol.view.predict
 import android.os.Bundle
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 import com.example.patrol.R
-import com.example.patrol.logic.Repository
-import com.example.patrol.logic.model.Predictions
+import com.example.patrol.logic.model.Prediction
 import com.github.mikephil.charting.animation.Easing
 import com.github.mikephil.charting.charts.LineChart
 import com.github.mikephil.charting.components.XAxis
@@ -16,6 +16,7 @@ import com.github.mikephil.charting.formatter.IndexAxisValueFormatter
 
 class PredictActivity : AppCompatActivity() {
     private lateinit var lineChart: LineChart
+    private lateinit var swipeRefresh: SwipeRefreshLayout
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,20 +31,42 @@ class PredictActivity : AppCompatActivity() {
         lineChart.description.isEnabled = false
         lineChart.setPinchZoom(true)
         lineChart.setDrawMarkers(true)
+        lineChart.setTouchEnabled(true)
+        lineChart.isDragEnabled = true
+        lineChart.setPinchZoom(true)
+        lineChart.axisRight.isEnabled = false
+        lineChart.description.text = "Hourly Crowd Level Forecast at $place"
+        lineChart.setNoDataText("No prediction yet!")
+        lineChart.animateX(1800, Easing.EaseInExpo)
 
+        swipeRefresh = findViewById(R.id.sw_refresh)
+        swipeRefresh.setColorSchemeResources(R.color.colorDark)
+        refreshData(lat, lon)
+        swipeRefresh.setOnRefreshListener {
+            refreshData(lat, lon)
+        }
+    }
+
+    private fun refreshData(lat: Double, lon: Double) {
         // Get actual data
 //        val crowdData = Repository.getPrediction(lat, lon)
         // mock data
-        val crowdData = ArrayList<Predictions>()
+        val crowdData = ArrayList<Prediction>()
+        crowdData.add(Prediction("12:00", 10f))
+        crowdData.add(Prediction("14:00", 2f))
+        crowdData.add(Prediction("13:00", 7f))
+        crowdData.add(Prediction("15:00", 20f))
+        crowdData.add(Prediction("16:00", 16f))
+        updateChart(crowdData)
+        // Hide the refresh indicator
+    }
+
+    private fun updateChart(crowdData: List<Prediction>) {
         val entries = ArrayList<Entry>()
-        crowdData.add(Predictions("12:00", 10f))
-        crowdData.add(Predictions("14:00", 2f))
-        crowdData.add(Predictions("13:00", 7f))
-        crowdData.add(Predictions("15:00", 20f))
-        crowdData.add(Predictions("16:00", 16f))
+
 
         // sort data based on first element
-        crowdData.sortBy { it.time }
+        crowdData.sortedBy { it.time }
         val xAxisLabels = crowdData.map { it.time }
         // populate entries
         for (i in crowdData.indices) {
@@ -64,22 +87,12 @@ class PredictActivity : AppCompatActivity() {
         lineDataSet.lineWidth = 1f
         lineDataSet.circleRadius = 3f
 
-        lineChart.data = LineData(lineDataSet)
-
-        lineChart.setTouchEnabled(true)
-        lineChart.isDragEnabled = true
-        lineChart.setPinchZoom(true)
-        lineChart.axisRight.isEnabled = false
-
-        lineChart.description.text = "Hourly Crowd Level Forecast at $place"
-        lineChart.setNoDataText("No prediction yet!")
-
-        lineChart.animateX(1800, Easing.EaseInExpo)
-
         val mv = MyMarkerView(this@PredictActivity, R.layout.markertextview, lineChart, xAxisLabels)
         mv.lineChart = lineChart
         lineChart.marker = mv
-        lineChart.invalidate() // refresh
 
+        lineChart.data = LineData(lineDataSet)
+        lineChart.invalidate() // refresh
+        swipeRefresh.isRefreshing = false
     }
 }
