@@ -17,6 +17,9 @@ def crowd():
                                                Location.lat <= lat_limit[1],
                                                Location.long >= long_limit[0],
                                                Location.long <= long_limit[1]).all()
-    print(result)
+    loc_result = []
+    for i in result:
+        loc_result.append(i.str2json())
+    # print(result)
 
-    return "success"
+    return loc_result

@@ -31,7 +31,8 @@ class DevelopConfig(Config):
         'NAME': '../database.db'
     }
     SQLALCHEMY_DATABASE_URI = get_db_uri(DATABSE)
-
+    SCHEDULER_TIMEZONE = 'Asia/Shanghai'  # 配置时区
+    SCHEDULER_API_ENABLED = True  # 添加API
 
 envs = {
     'develop': DevelopConfig
