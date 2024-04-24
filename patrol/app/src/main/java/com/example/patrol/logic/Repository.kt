@@ -28,7 +28,6 @@ object Repository {
             val multiPredictions = deferredPrediction.await()
             Result.success(multiPredictions)
         }
-
     }
 
     private fun <T> fire(context: CoroutineContext, block: suspend () -> Result<T>) =
