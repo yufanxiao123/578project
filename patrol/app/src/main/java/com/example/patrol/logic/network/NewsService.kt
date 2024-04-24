@@ -5,6 +5,7 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface NewsService {
-    @GET("mock/348963/newsDemo")
+//    mock/348963/newsDemo
+    @GET("news")
     fun getNews(): Call<List<News>>
 }
