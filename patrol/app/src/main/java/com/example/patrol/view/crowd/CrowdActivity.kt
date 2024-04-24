@@ -38,6 +38,7 @@ class CrowdActivity: AppCompatActivity(), OnMapReadyCallback {
         val zoomLevel = 17.0f
         mMap.animateCamera(CameraUpdateFactory.newLatLngZoom(center, zoomLevel))
         mMap.addMarker(com.google.android.gms.maps.model.MarkerOptions().position(center).title("current location"))
+<<<<<<< Updated upstream
         addHeatMap(listOf(
             LatLng(
                 intent.getDoubleExtra("lat", 0.0),
@@ -52,6 +53,52 @@ class CrowdActivity: AppCompatActivity(), OnMapReadyCallback {
                 intent.getDoubleExtra("lon", 0.0) - 0.0001
             )  // Example coordinates
         ))
+=======
+
+        Log.d("cg",center.latitude.toString())
+        Log.d("cg",center.longitude.toString())
+
+        // cgz added
+        val latLngs: MutableList<LatLng> = mutableListOf()
+//        viewModel.getCrowd("37.4222755","-122.0842218")
+        viewModel.getCrowd(center.latitude.toString(),center.longitude.toString())
+        viewModel.crowdLiveData.observe(this, Observer{ result ->
+            val crowds = result.getOrNull()
+            if (crowds != null) {
+                addHeatMap(crowds)
+                for (crowd in crowds){
+                    latLngs.add(crowd)
+
+                    Log.d("cg",center.latitude.toString())
+                    Log.d("cg",center.longitude.toString())
+                }
+
+
+            } else {
+                Toast.makeText(this, "no news found", Toast.LENGTH_SHORT).show()
+                result.exceptionOrNull()?.printStackTrace()
+            }
+        })
+
+
+
+
+//        yufanxiao original code
+//        addHeatMap(listOf(
+//            LatLng(
+//                intent.getDoubleExtra("lat", 0.0),
+//                intent.getDoubleExtra("lon", 0.0)
+//            ),  // Example coordinates
+//            LatLng(
+//                intent.getDoubleExtra("lat", 0.0) + 0.0001,
+//                intent.getDoubleExtra("lon", 0.0) + 0.0001
+//            ),  // Example coordinates
+//            LatLng(
+//                intent.getDoubleExtra("lat", 0.0) - 0.0001,
+//                intent.getDoubleExtra("lon", 0.0) - 0.0001
+//            )  // Example coordinates
+//        ))
+>>>>>>> Stashed changes
     }
 
     private fun addHeatMap(latLngs: List<LatLng> = listOf()) {
