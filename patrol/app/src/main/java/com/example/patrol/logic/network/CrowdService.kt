@@ -7,7 +7,8 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface CrowdService {
-    @GET("mock/348963/crowd")
+//    mock/348963/crowd
+    @GET("crowdfake")
     fun getCrowd(@Query("lat") lat: String, @Query("lon") lon: String): Call<List<LatLng>>
 
 }
