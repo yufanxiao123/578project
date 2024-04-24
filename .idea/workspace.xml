@@ -25,6 +25,21 @@
       <change beforePath="$PROJECT_DIR$/backend/migrations/script.py.mako" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/migrations/versions/7da7a412f381_initial_migration.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/backend/requirement.txt" beforeDir="false" afterPath="$PROJECT_DIR$/backend/requirement.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/model/Predictions.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PredictService.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/view/predict/MyMarkerView.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/view/predict/PredictActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/drawable/gradient_bg.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/drawable/oval_marker.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/layout/activity_predict.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/patrol/app/src/main/res/layout/markertextview.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/build.gradle.kts" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/build.gradle.kts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/MainActivity.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/MainActivity.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/Repository.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/Repository.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PatrolNetwork.kt" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/java/com/example/patrol/logic/network/PatrolNetwork.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/patrol/app/src/main/res/values/colors.xml" beforeDir="false" afterPath="$PROJECT_DIR$/patrol/app/src/main/res/values/colors.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +140,22 @@
     &quot;DatabaseDriversLRU&quot;: [
       &quot;sqlite&quot;
     ]
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "android.gradle.sync.needed": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "dart.analysis.tool.window.visible": "false",
+    "git-widget-placeholder": "mobile__prediction__guojiazhen",
+    "last_opened_file_path": "C:/MyDocuments/AndroidStudioProjects/578project",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.kotlinCompiler",
+    "show.migrate.to.gradle.popup": "false"
   }
 }</component>
   <component name="RunManager">

@@ -1,15 +1,17 @@
 package com.example.patrol.view.news
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
-import android.util.Log
-import android.view.View
+import android.widget.Button
+import android.widget.ImageView
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.patrol.R
-import com.example.patrol.logic.model.News
+
 
 class NewsActivity : ComponentActivity() {
     private lateinit var newsAdapter: NewsAdapter
@@ -40,6 +42,13 @@ class NewsActivity : ComponentActivity() {
                 result.exceptionOrNull()?.printStackTrace()
             }
         })
+
+        findViewById<ImageView>(R.id.facebook).setOnClickListener {
+            val url = "https://www.facebook.com/sharer/sharer.php?u=https://keck.usc.edu/news/covid-19-research-new-details-about-potentially-deadly-inflammation-revealed-in-usc-study/"
+            val intent = Intent(Intent.ACTION_VIEW)
+            intent.data = Uri.parse(url)
+            startActivity(intent)
+        }
 
 // yufanxiao's original code
 //        newsAdapter.newsList.add(News("News 1", "https://ca.cair.com/losangeles/wp-content/uploads/sites/6/2020/03/CAIR_CA-COVID_Insta.jpg", "Content 1"))

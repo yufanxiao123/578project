@@ -18,7 +18,7 @@
         android:theme="@style/Theme.Patrol"
         tools:targetApi="31">
         <activity
-            android:name=".view.charts.LineChartActivity"
+            android:name=".view.predict.PredictActivity"
             android:exported="false" />
         <activity
             android:name=".view.charts.BarChartActivity"

@@ -4,16 +4,16 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
     >
+        <TextView
+            android:id="@+id/text_clowdness"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="20dp"
+            android:textSize="24sp"
+            android:padding="5dp"
+            android:text="Current Crowdness"/>
 
-    <TextView
-        android:id="@+id/text_clowdness"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="30dp"
-        android:textSize="24sp"
-        android:padding="5dp"
-        android:text="Current Crowdness"/>
 
     <fragment
         android:id="@+id/map"

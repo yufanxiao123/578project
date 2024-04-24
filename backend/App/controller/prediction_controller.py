@@ -50,3 +50,6 @@ def crowd():
     })
 
 # eg: http://127.0.0.1:5000/predict/predict?lat=40.7128&long=-74.0060
+from flask import Blueprint
+
+prediction_controller = Blueprint('prediction', __name__)

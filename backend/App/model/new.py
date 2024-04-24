@@ -16,3 +16,4 @@ class News(db.Model):
             "content":self.content,
             "date":self.date
         }
+    date = db.Column(db.DateTime(timezone=True), server_default=func.now())

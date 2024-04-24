@@ -16,3 +16,12 @@ def init_ext(app):
     scheduler.init_app(app)
     scheduler.start()
     print("End the scheduler")
+
+db = SQLAlchemy()
+migrate = Migrate()
+
+
+def init_ext(app):
+    # init db
+    db.init_app(app=app)
+    migrate = Migrate(app, db)
