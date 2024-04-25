@@ -1,16 +1,19 @@
 from flask import Blueprint
 
+from App.ext import db
 from App.model.location import Location
-from App.model.new import News
+from App.model.history import History
 
 history_controller = Blueprint('history', __name__)
 
 
-@history_controller.route('/v')
+@history_controller.route('')
 def history():
-    t = News.query.all()
+    result = db.session.query(History).limit(10).all()
+    ret = []
+    for i in result:
+        ret.append(i.str2json())
+    print(ret)
+    return ret
 
 
-@history_controller.route('/t')
-def history1():
-    t = Location.query.all()
