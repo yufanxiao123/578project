@@ -6,8 +6,11 @@ You need to open ./patrol directory in Android Studio and run MainActivity. We r
 Pixel 8 as the virtual device and VanillaiceCream(Android 15) as the Android Operating System.
 
 To run backend Do following:
+
 cd ./backend
+
 pip install -r requirement.txt
+
 flask run
 
 Project Description
