@@ -30,6 +30,11 @@ object Repository {
         }
     }
 
+    fun getHistroyData() = fire(Dispatchers.IO){
+        val multiHistoryData = PatrolNetwork.getHistroyData()
+        Result.success(multiHistoryData)
+    }
+
     private fun <T> fire(context: CoroutineContext, block: suspend () -> Result<T>) =
         liveData<Result<T>>(context) {
             val result = try {
