@@ -10,22 +10,6 @@ cd ./backend
 pip install -r requirement.txt
 flask run
 
-── Generation_Task
-├── model
-└── migrations
-└── patrol/
-└── app/scr/main/java/com/example/patrol
-├── MainActivity.kt
-├── view/
-│ ├── chart/
-│ ├── crowd/
-│ ├── news/
-│ └── predict/
-└── logic/
-├── Repository.kt
-├── network/
-└── model/
-
 Project Description
 
 Back End:
