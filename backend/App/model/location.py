@@ -7,7 +7,7 @@ class Location(db.Model):
     long = db.Column(db.Float)
     def str2json(self):
         return {
-            "lat":self.lat,
-            "long":self.long,
-            "location_id":self.location_id
+            "latitude":self.lat,
+            "longitude":self.long
+            # "location_id":self.location_id
         }

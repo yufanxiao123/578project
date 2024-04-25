@@ -27,10 +27,10 @@ def convert_zipcode_to_loc(zipcode):
 
 def generate_random_coordinates_near_loc(lat,long):
 
-    center_latitude, center_longitude = lat, long
+    center_latitude, center_longitude = 37.4062237,-122.07816629999998
 
     # 生成一个小的随机偏移，例如在中心点周围最多偏移0.01度
-    offset_max = 0.01
+    offset_max = 0.001
     latitude = center_latitude + random.uniform(-offset_max, offset_max)
     longitude = center_longitude + random.uniform(-offset_max, offset_max)
 
