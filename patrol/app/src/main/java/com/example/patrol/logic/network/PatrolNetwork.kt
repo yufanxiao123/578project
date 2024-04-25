@@ -16,7 +16,7 @@ object PatrolNetwork {
     suspend fun getCrowd(lat: String, lon: String) = crowdService.getCrowd(lat,lon).await()
 
     private val predictService = ServiceCreator.create(PredictService::class.java)
-    suspend fun getPrediction(lat: Double, lon: Double) = predictService.getPrediction(lat,lon).await()
+    suspend fun getPrediction(lat: String, lon: String) = predictService.getPrediction(lat,lon).await()
 
     private val historyDataService = ServiceCreator.create(HistoryDataService::class.java)
     suspend fun getHistroyData() = historyDataService.getHistroyData().await()

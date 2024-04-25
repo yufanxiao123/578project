@@ -27,7 +27,7 @@ def convert_zipcode_to_loc(zipcode):
 
 def generate_random_coordinates_near_loc(lat,long):
 
-    center_latitude, center_longitude = 37.4062237,-122.07816629999998
+    center_latitude, center_longitude = 37.42336950000001,-122.0782377
 
     # 生成一个小的随机偏移，例如在中心点周围最多偏移0.01度
     offset_max = 0.001
@@ -37,7 +37,7 @@ def generate_random_coordinates_near_loc(lat,long):
     return latitude, longitude
 
 
-@scheduler.task('interval', id='task_1', seconds=2, misfire_grace_time=900)
+@scheduler.task('interval', id='task_1', seconds=2000000, misfire_grace_time=900)
 def task1():
     t_l = []
     for i in range(0,10):
@@ -69,7 +69,7 @@ def task1():
 #     scheduler.init_app(app)
 #     scheduler.start()
 #     app.run()
-@scheduler.task('interval', id='task_2', seconds=2, misfire_grace_time=900)
+@scheduler.task('interval', id='task_2', seconds=2000000, misfire_grace_time=900)
 def task_more_safe_crowd():
     t_l = []
     for i in range(0,10):

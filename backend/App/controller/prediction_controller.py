@@ -3,9 +3,9 @@ from App.ext import db
 from App.model.location import Location
 import openai
 import re
-import random
+import  random
 from datetime import datetime, timedelta
-openai.api_key = ""
+openai.api_key = "sk-proj-VErkYQf1V0n6K2ZsLetPT3BlbkFJ1yjrdM26IIZOX9N2JdiL"
 prediction_controller = Blueprint('prediction', __name__)
 def extract_result(text):
     numbers = re.findall(r'\{(\d+)\}', text)
@@ -77,7 +77,7 @@ def crowd():
     # 打印当前小时和接下来的之前五个小时
     for i in range(5):
         # 计算之前的小时
-        previous_hour = now - timedelta(hours=i)
+        previous_hour = now + timedelta(hours=i)
         # 格式化时间，仅显示小时和分钟
         formatted_time = previous_hour.strftime("%H:%M")
         print("当前时间向前推", i, "小时:", formatted_time)
@@ -98,6 +98,8 @@ def crowd():
                 'crowdness': results[i],
                 'time': str(formatted_time),
             })
+
+    print(predictions)
     return jsonify(predictions)
 
 # eg: http://127.0.0.1:5000/predict/predict?lat=40.7128&long=-74.0060

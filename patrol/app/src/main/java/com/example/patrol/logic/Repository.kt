@@ -20,14 +20,9 @@ object Repository {
         Result.success(multiCrowds)
     }
 
-    fun getPrediction(lat: Double, lon: Double) = fire(Dispatchers.IO) {
-        coroutineScope {
-            val deferredPrediction = async {
-                PatrolNetwork.getPrediction(lat, lon)
-            }
-            val multiPredictions = deferredPrediction.await()
-            Result.success(multiPredictions)
-        }
+    fun getPrediction(lat: String, lon: String) = fire(Dispatchers.IO) {
+        val myPrediction = PatrolNetwork.getPrediction(lat, lon)
+        Result.success(myPrediction)
     }
 
     fun getHistroyData() = fire(Dispatchers.IO){

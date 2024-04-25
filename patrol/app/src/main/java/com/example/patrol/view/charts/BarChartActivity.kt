@@ -74,11 +74,5 @@ class BarChartActivity : AppCompatActivity() {
     }
 
 
-    class DayAxisValueFormatter(private val chart: BarLineChartBase<*>) : ValueFormatter() {
-        override fun getFormattedValue(value: Float): String {
-            return "MM-DD"
-        }
-    }
-
 
 }

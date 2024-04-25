@@ -6,6 +6,6 @@ import retrofit2.Call
 import retrofit2.http.GET
 
 interface HistoryDataService {
-    @GET("hisotry")
+    @GET("history")
     fun getHistroyData() : Call<List<DailyCovidNumber>>
 }
