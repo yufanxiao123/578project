@@ -12,9 +12,9 @@ class News(db.Model):
 
     def str2json(self):
         return {
-            "id": self.id,
+            # "id": self.id,
             "title": self.title,
             "image": self.image,
             "content": self.content,
-            "date": self.date
+            # "date": self.date
         }

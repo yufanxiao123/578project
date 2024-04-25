@@ -52,7 +52,7 @@ class CrowdActivity: AppCompatActivity(), OnMapReadyCallback {
 
         // cgz added
         val latLngs: MutableList<LatLng> = mutableListOf()
-//        viewModel.getCrowd("37.4222755","-122.0842218")
+//        viewModel.getCrowd("-47.36688677728133","126.00817028056607")
         viewModel.getCrowd(center.latitude.toString(),center.longitude.toString())
         viewModel.crowdLiveData.observe(this, Observer{ result ->
             val crowds = result.getOrNull()
