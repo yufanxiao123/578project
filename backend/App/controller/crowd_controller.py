@@ -20,6 +20,6 @@ def crowd():
     loc_result = []
     for i in result:
         loc_result.append(i.str2json())
-    # print(result)
+    print(loc_result)
 
     return loc_result
