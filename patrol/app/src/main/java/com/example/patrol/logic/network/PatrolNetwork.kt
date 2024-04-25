@@ -18,6 +18,9 @@ object PatrolNetwork {
     private val predictService = ServiceCreator.create(PredictService::class.java)
     suspend fun getPrediction(lat: Double, lon: Double) = predictService.getPrediction(lat,lon).await()
 
+    private val historyDataService = ServiceCreator.create(HistoryDataService::class.java)
+    suspend fun getHistroyData() = historyDataService.getHistroyData().await()
+
     private suspend fun <T> Call<T>.await(): T {
         return suspendCoroutine { continuation ->
             enqueue(object : Callback<T> {
